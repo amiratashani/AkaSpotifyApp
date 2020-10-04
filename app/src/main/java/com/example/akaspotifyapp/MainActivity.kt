@@ -11,6 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             val songs = musicDatabase.getAllSongs()
-            Log.i("MainActivityCustome", songs.toString())
+            Timber.i(songs.toString())
         }
 
 
