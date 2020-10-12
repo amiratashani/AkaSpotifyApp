@@ -66,23 +66,15 @@ class MusicServiceConnection(
         }
 
         override fun onConnectionSuspended() {
-            _isConnected.postValue(
-                Event(
-                    Resource.error(
-                        "The connection was suspended", false
-                    )
-                )
-            )
+            _isConnected.postValue(Event(Resource.error(
+                "The connection was suspended", false
+            )))
         }
 
         override fun onConnectionFailed() {
-            _isConnected.postValue(
-                Event(
-                    Resource.error(
-                        "Couldn't connect to media browser", false
-                    )
-                )
-            )
+            _isConnected.postValue(Event(Resource.error(
+                "Couldn't connect to media browser", false
+            )))
         }
     }
 
@@ -98,7 +90,7 @@ class MusicServiceConnection(
 
         override fun onSessionEvent(event: String?, extras: Bundle?) {
             super.onSessionEvent(event, extras)
-            when (event) {
+            when(event) {
                 NETWORK_ERROR -> _networkError.postValue(
                     Event(
                         Resource.error(
