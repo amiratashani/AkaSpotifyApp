@@ -12,6 +12,7 @@ import com.example.akaspotifyapp.exoplayer.callbacks.MusicPlaybackPreparer
 import com.example.akaspotifyapp.exoplayer.callbacks.MusicPlayerEventListener
 import com.example.akaspotifyapp.exoplayer.callbacks.MusicPlayerNotificationListener
 import com.example.akaspotifyapp.other.Constants.MEDIA_ROOT_ID
+import com.example.akaspotifyapp.other.Constants.NETWORK_ERROR
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
@@ -110,7 +111,7 @@ class MusicService : MediaBrowserServiceCompat() {
         itemToPlay: MediaMetadataCompat?,
         playNow: Boolean
     ) {
-        val curSongIndex = if(curPlayingSong == null) 0 else songs.indexOf(itemToPlay)
+        val curSongIndex = if (curPlayingSong == null) 0 else songs.indexOf(itemToPlay)
         exoPlayer.prepare(firebaseMusicSource.asMediaSource(dataSourceFactory))
         exoPlayer.seekTo(curSongIndex, 0L)
         exoPlayer.playWhenReady = playNow
@@ -142,20 +143,25 @@ class MusicService : MediaBrowserServiceCompat() {
         parentId: String,
         result: Result<MutableList<MediaBrowserCompat.MediaItem>>
     ) {
-        when(parentId) {
+        when (parentId) {
             MEDIA_ROOT_ID -> {
                 val resultsSent = firebaseMusicSource.whenReady { isInitialized ->
-                    if(isInitialized) {
+                    if (isInitialized) {
                         result.sendResult(firebaseMusicSource.asMediaItems())
-                        if(!isPlayerInitialized && firebaseMusicSource.songs.isNotEmpty()) {
-                            preparePlayer(firebaseMusicSource.songs, firebaseMusicSource.songs[0], false)
+                        if (!isPlayerInitialized && firebaseMusicSource.songs.isNotEmpty()) {
+                            preparePlayer(
+                                firebaseMusicSource.songs,
+                                firebaseMusicSource.songs[0],
+                                false
+                            )
                             isPlayerInitialized = true
                         }
                     } else {
+                        mediaSession.sendSessionEvent(NETWORK_ERROR, null)
                         result.sendResult(null)
                     }
                 }
-                if(!resultsSent) {
+                if (!resultsSent) {
                     result.detach()
                 }
             }
