@@ -27,7 +27,6 @@ object AppModule {
                 .placeholder(R.drawable.ic_image)
                 .error(R.drawable.ic_image)
                 .diskCacheStrategy(DiskCacheStrategy.DATA)
-
         )
 
     @Singleton

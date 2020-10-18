@@ -8,9 +8,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.akaspotifyapp.data.models.Song
 import com.example.akaspotifyapp.exoplayer.MusicServiceConnection
-import com.example.akaspotifyapp.exoplayer.callbacks.isPlayEnabled
-import com.example.akaspotifyapp.exoplayer.callbacks.isPlaying
-import com.example.akaspotifyapp.exoplayer.callbacks.isPrepared
+import com.example.akaspotifyapp.exoplayer.isPlayEnabled
+import com.example.akaspotifyapp.exoplayer.isPlaying
+import com.example.akaspotifyapp.exoplayer.isPrepared
 import com.example.akaspotifyapp.other.Constants.MEDIA_ROOT_ID
 import com.example.akaspotifyapp.other.Resource
 

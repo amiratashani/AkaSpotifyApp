@@ -1,4 +1,4 @@
-package com.example.akaspotifyapp.exoplayer.callbacks
+package com.example.akaspotifyapp.exoplayer
 
 import android.support.v4.media.session.PlaybackStateCompat
 
