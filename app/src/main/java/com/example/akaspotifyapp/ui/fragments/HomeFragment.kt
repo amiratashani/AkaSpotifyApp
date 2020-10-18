@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.akaspotifyapp.R
 import com.example.akaspotifyapp.adapters.SongAdapter
+import com.example.akaspotifyapp.adapters.SongListener
 import com.example.akaspotifyapp.other.Status
 import com.example.akaspotifyapp.ui.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,9 +38,9 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
         subscribeToObservers()
 
-        songAdapter.setOnItemClickListener {
-            mainViewModel.playOrToggleSong(it)
-        }
+        songAdapter.clickListener = SongListener { mainViewModel.playOrToggleSong(it) }
+
+
     }
 
     private fun setupRecyclerView() {
@@ -55,7 +56,7 @@ class HomeFragment : Fragment() {
                 Status.SUCCESS -> {
                     allSongsProgressBar.isVisible = false
                     result.data?.let { songs ->
-                        songAdapter.songs = songs
+                        songAdapter.submitList(songs)
                     }
                 }
                 Status.ERROR -> Unit
