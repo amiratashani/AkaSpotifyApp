@@ -15,6 +15,7 @@ abstract class BaseSongAdapter(
 
     var clickListener: SongListener? = null
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
         return SongViewHolder(
             LayoutInflater.from(parent.context).inflate(
