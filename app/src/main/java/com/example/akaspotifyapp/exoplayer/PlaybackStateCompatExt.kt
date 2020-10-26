@@ -19,7 +19,9 @@ inline val PlaybackStateCompat.isPlayEnabled
                     state == PlaybackStateCompat.STATE_PAUSED)
 
 inline val PlaybackStateCompat.currentPlaybackPosition: Long
-    get() = if (state == PlaybackStateCompat.STATE_PLAYING) {
-        val timeDelta = SystemClock.elapsedRealtime() - lastPositionUpdateTime
-        (position + (timeDelta * playbackSpeed)).toLong()
-    } else position
+    get() {
+        return if (state == PlaybackStateCompat.STATE_PLAYING) {
+            val timeDelta = SystemClock.elapsedRealtime() - lastPositionUpdateTime
+            (position + (timeDelta * playbackSpeed)).toLong()
+        } else position
+    }

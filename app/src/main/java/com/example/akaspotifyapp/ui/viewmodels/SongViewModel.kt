@@ -35,6 +35,7 @@ class SongViewModel @ViewModelInject constructor(
                 if (curPlayerPosition.value != pos) {
                     _curPlayerPosition.postValue(pos)
                     _curSongDuration.postValue(MusicService.curSongDuration)
+
                 }
                 delay(UPDATE_PLAYER_POSITION_INTERVAL)
             }
