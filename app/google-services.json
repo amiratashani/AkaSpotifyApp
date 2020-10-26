@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "802990484677",
+    "firebase_url": "https://aka-spotify-app.firebaseio.com",
+    "project_id": "aka-spotify-app",
+    "storage_bucket": "aka-spotify-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802990484677:android:377675d71594cc48e154ac",
+        "android_client_info": {
+          "package_name": "com.example.akaspotifyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802990484677-vrkac2fek5u41qfr6s3g7aqvrh21poge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG6_usTu-T4kfmR_X7gPIIXrKa5g48iBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802990484677-vrkac2fek5u41qfr6s3g7aqvrh21poge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
