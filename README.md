@@ -1,3 +1,4 @@
+
 # AkaSpotifyApp
 The basic music player app in Android using the MVVM architecture. This app will have a similar design as Spotify and it will also be designed in a way that is easily extendable with more features.
 # Introduction
@@ -10,10 +11,10 @@ It leverages the following components from the Jetpack library:
 
 Use their library in app:
 
-- [Timber](https://github.com/JakeWharton/timber)  : This is a logger.
-- [Dagger-Hilt](https://developer.android.com/training/dependency-injection/hilt-android)  : A fast dependency injector.
-- [Glide](https://github.com/bumptech/glide): A fast and efficient open-source media management and image loading framework for Android.
-- [ExoPlayer](https://github.com/google/ExoPlayer): ExoPlayer is an application-level media player for Android. It provides an alternative to Android’s MediaPlayer API for playing audio and video both locally and over the Internet.
+-   [Timber](https://github.com/JakeWharton/timber)  : This is a logger.
+-   [Dagger-Hilt](https://developer.android.com/training/dependency-injection/hilt-android)  : A fast dependency injector.
+- [Glide](https://github.com/bumptech/glide): A fast and efficient open source media management and image loading framework for Android.
+- [ExoPlayer](https://github.com/google/ExoPlayer): ExoPlayer is an application level media player for Android. It provides an alternative to Android’s MediaPlayer API for playing audio and video both locally and over the Interne.
 
 **This app used the** [**FirebaseFirestore**](https://firebase.google.com/docs/firestore) **and** [**FirebaseStorage**](https://firebase.google.com/docs/storage) 
 
@@ -25,13 +26,13 @@ The songs are played online and non-stop, and Exoplayer does this for us.
 
 **MusicService :**
 <p align="center">
- <img src=" https://github.com/amiratashani/AkaSpotifyApp/raw/master/screenshots/MusicService.png"/>
-  </p>
+ <img src="https://github.com/amiratashani/AkaSpotifyApp/raw/master/screenshots/MusicService.png"/>
+</p>
   
   **The media session and controller :**
- <p align="center">
-  <img src="  https://github.com/amiratashani/AkaSpotifyApp/raw/master/screenshots/MediaController.png"/>
- </p>
+  <p align="center">
+  <img src="https://github.com/amiratashani/AkaSpotifyApp/raw/master/screenshots/MediaController.png"/>
+  </p>
  
 ## Screenshots
 <p align="center">
